@@ -50,8 +50,6 @@ inscription.addEventListener('click', (e) => {
 
     console.log('utilisateur ajouté');
 
-    // location.reload();
-
     // inscription
 
     createUserWithEmailAndPassword(auth, mail, mdp)
@@ -82,11 +80,22 @@ inscription.addEventListener('click', (e) => {
             if (mdp.length < 8) {
                 alert('Le mot de passe doit contenir au moins 8 caractères.');
                 return;
+            } else {
+
+                alert("incription avec succès")
+
+                Swal.fire(
+                    'Good job!',
+                    'You clicked the button!',
+                    'success'
+                )
+
+                // redirectionnement vers la page de connexion
+
+                window.location.href = '/pageDeConnexion.html';
+
             }
 
-            // redirectionnement vers la page de connexion
-
-            window.location.href = '/pageDeConnexion.html';
 
         })
         .catch((error) => {
@@ -95,48 +104,6 @@ inscription.addEventListener('click', (e) => {
             // ..
             alert("inscription pas réussi")
         });
-
-
-    // // Créer une instance de l'objet GoogleAuthProvider
-    // const provider = new firebase.auth.GoogleAuthProvider();
-
-    // // Ouvrir la fenêtre de connexion Google lors d'un clic sur un bouton
-    // const signInWithGoogle = async () => {
-    //     try {
-    //         await firebase.auth().signInWithPopup(provider);
-    //         console.log('Connecté avec succès à un compte Google');
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // };
-    // connexion
-
-    // signInWithEmailAndPassword(auth, mail, mdp)
-    //     .then((userCredential) => {
-    //         // Signed in 
-    //         const user = userCredential.user;
-    //         // ...
-    //         // Vérifier si les champs sont remplis
-    //         if (mail === '' || mdp === '') {
-    //             alert('Veuillez remplir tous les champs.');
-    //             return;
-    //         }
-
-    //         // Vérifier si les informations d'authentification sont valides
-    //         if (mail === 'mail' && mdp === 'mdp') {
-    //             // Authentification réussie
-    //             alert('Authentification réussie.');
-    //             // rediriger l'utilisateur vers une nouvelle page
-    //             window.location.href = '/pageDattérissage.html';
-    //         } else {
-    //             // Informations d'authentification incorrectes
-    //             alert('Nom d\'utilisateur ou mot de passe incorrect.');
-    //         }
-    //     })
-    //     .catch((error) => {
-    //         const errorCode = error.code;
-    //         const errorMessage = error.message;
-    //     });
 
 
 });

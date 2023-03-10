@@ -31,38 +31,38 @@ connection.addEventListener('click', (e) => {
 
     // connexion
 
-signInWithEmailAndPassword(auth, Email, passWord)
-.then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    // ...
-    // // Vérifier si les champs sont remplis
-    if (Email === '' || passWord === '') {
-        alert('Veuillez remplir tous les champs.');
-        return;
-    }
+    signInWithEmailAndPassword(auth, Email, passWord)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            // ...
+            // // Vérifier si les champs sont remplis
+            if (Email === '' || passWord === '') {
+                alert('Veuillez remplir tous les champs.');
+                return;
+            }
 
-    // // Vérifier si les informations d'authentification sont valides
-    if (Email === 'mail' && passWord === 'mdp') {
-    //     // Authentification réussie
-        alert('Authentification réussie.');
-    //     // rediriger l'utilisateur vers une nouvelle page
-        window.location.href = '/pageDattérissage.html';
-    }
-     else {
-        // Informations d'authentification incorrectes
-        // alert('Nom d\'utilisateur ou mot de passe incorrect.');
-        window.location.href = '/pageDattérissage.html';
+            // // Vérifier si les informations d'authentification sont valides
+            if (Email === 'Email' && passWord === 'passWord') {
+                //     // Authentification réussie
+                alert('Authentification réussie.');
+                //     // rediriger l'utilisateur vers une nouvelle page
+                window.location.href = '/pageDattérissage.html';
+            }
+            else {
+                // Informations d'authentification incorrectes
+                // alert('Nom d\'utilisateur ou mot de passe incorrect.');
+                window.location.href = '/pageDattérissage.html';
+            }
+        })  
 
-    }
-})
-.catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
 
-    alert("connexion pas réussi")
+            alert("connexion pas réussi")
 
-});
+        });
 
 });
 
