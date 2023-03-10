@@ -142,19 +142,3 @@ inscription.addEventListener('click', (e) => {
 });
 
 
-const Deconnexion = document.getElementById("Deconnexion");
-Deconnexion.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    
-    // deconnexion
-
-    signOut(auth).then(() => {
-        // Sign-out successful.
-        alert("vous etes deconnecté")
-    }).catch((error) => {
-        // An error happened.
-    });
-
-})
-

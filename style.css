@@ -15,7 +15,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-
 }
 
 .fond{
@@ -24,13 +23,6 @@ body{
 
 .fond:hover{
     background-color: white;
-}
-
-.contenu1{
-    background-color: rgba(255, 166, 0, 0.363);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 svg{
