@@ -22,8 +22,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-const Connection = document.getElementById("Connection");
-Connection.addEventListener('click', (e) => {
+const connection = document.getElementById("connection");
+connection.addEventListener('click', (e) => {
     e.preventDefault();
 
     var Email = document.getElementById('Email').value;
