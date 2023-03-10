@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -37,24 +37,24 @@ signInWithEmailAndPassword(auth, Email, passWord)
     const user = userCredential.user;
     // ...
     // // Vérifier si les champs sont remplis
-    // if (Email === '' || passWord === '') {
-    //     alert('Veuillez remplir tous les champs.');
-    //     return;
-    // }
+    if (Email === '' || passWord === '') {
+        alert('Veuillez remplir tous les champs.');
+        return;
+    }
 
     // // Vérifier si les informations d'authentification sont valides
-    // if (Email === 'mail' && passWord === 'mdp') {
+    if (Email === 'mail' && passWord === 'mdp') {
     //     // Authentification réussie
         alert('Authentification réussie.');
     //     // rediriger l'utilisateur vers une nouvelle page
-    //     window.location.href = '/pageDattérissage.html';
-    // }
-    //  else {
-    //     // Informations d'authentification incorrectes
-    //     // alert('Nom d\'utilisateur ou mot de passe incorrect.');
-    //     window.location.href = '/pageDattérissage.html';
+        window.location.href = '/pageDattérissage.html';
+    }
+     else {
+        // Informations d'authentification incorrectes
+        // alert('Nom d\'utilisateur ou mot de passe incorrect.');
+        window.location.href = '/pageDattérissage.html';
 
-    // }
+    }
 })
 .catch((error) => {
     const errorCode = error.code;
